@@ -4,7 +4,7 @@
 #$ -e log
 #$ -P fraser.prjc
 #$ -q short.qc,jeeves.q,gromit.q,brienne.q
-#$ -t 1-10
+#$ -t 1-1000
 
 module unload R
 module load R/3.4.0-openblas-0.2.18-omp-gcc5.4.0
