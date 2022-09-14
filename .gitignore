@@ -3,6 +3,7 @@
 parameters/*.tar.gz
 parameters/PARAMS*
 parameters/*.*
+parameters/average_chips_coverage*
 
 .DS_Store
 
