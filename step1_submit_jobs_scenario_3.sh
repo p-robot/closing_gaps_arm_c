@@ -14,10 +14,8 @@
 # 
 # W. Probert, 2019
 
-declare -a communities=(8 9 10 11)
-
-# Time at which the simulations should end
-T=2031
+source config.sh
+source os_config.sh
 
 # Loop over communities.  
 for community in ${communities[@]}
