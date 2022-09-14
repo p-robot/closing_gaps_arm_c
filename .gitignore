@@ -8,3 +8,5 @@ parameters/average_chips_coverage*
 .DS_Store
 
 src*
+
+log/*.*
