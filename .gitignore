@@ -1,0 +1,9 @@
+
+
+parameters/*.tar.gz
+parameters/PARAMS*
+parameters/*.*
+
+.DS_Store
+
+src*
