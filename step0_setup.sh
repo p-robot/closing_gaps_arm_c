@@ -9,8 +9,6 @@ repo_name="IBM_simul"
 output_file="latest_commit.log"
 repo_host="p-robot"
 
-mkdir -p log results parameters
-
 # Remove the code folder (in case it has already been created)
 rm -rf src
 
@@ -19,7 +17,7 @@ rm -rf src
 git clone --branch $branch_name https://${github_username}@github.com/${repo_host}/${repo_name}.git src
 
 # Pull the latest commit number and save to file
-./save_commit.sh src $github_username $output_file
+./utilities/save_commit.sh src $github_username $output_file
 
 # Scenario 1 and CF
 
@@ -45,7 +43,7 @@ python python/change_macro.py ./src/constants.h ALLOW_COUNTERFACTUAL_ROLLOUT 0 .
 # Compile the code
 cd src
 module load intel
-make clean; make all location=rescomp compiler=icc
+make clean; make all location=rescomp compiler=gcc
 cd ..
 
 
@@ -84,7 +82,7 @@ python python/change_macro.py ./src_norollout/constants.h ALLOW_COUNTERFACTUAL_R
 # Compile the code
 cd src_norollout
 module load intel
-make clean; make all location=rescomp compiler=icc
+make clean; make all location=rescomp compiler=gcc
 cd ..
 
 # Scenario 3
@@ -121,6 +119,6 @@ python python/change_macro.py ./src_rollout/constants.h T_ROLLOUT_CHIPS_EVERYWHE
 # Compile the code
 cd src_rollout
 module load intel
-make clean; make all location=rescomp compiler=icc
+make clean; make all location=rescomp compiler=gcc
 cd ..
 
